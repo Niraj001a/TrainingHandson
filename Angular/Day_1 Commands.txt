@@ -1,0 +1,19 @@
+
+1] ng new --skip-tests
+2] ng new example --dry-run
+3] ng new example --skip-install
+   npm install
+4] ng new example --skip-tests
+5] ng new example --style scss
+
+
+6] ng generate component [name]
+7] ng g c about --flat 
+
+8]ng g c Header --inlineTemplate=true --inlineStyle=true --skip-tests=true
+
+-- to not include defferent html and css file
+
+9]ng new new_app_name --skip-tests
+
+-- Above command is used to create the new app without having test file 

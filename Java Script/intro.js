@@ -1,0 +1,1 @@
+console.log("This is console massege from java scipt");

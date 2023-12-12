@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+		
+		//Consrtuctor version
+
+
+		function Employee(empId,name,salary){
+			this.empId=empId;
+			this.name=name;
+			this.salary=salary;
+
+			this.showEmployeeDetails=function(){
+				return ("Employee details are "+this.empId+" "+this.name+" "+this.salary)
+			}
+
+            this.displaySalary=function(){
+				return ("Enterd employee salary is "+this.salary)
+			}
+
+            this.getId=function(){
+                return this.empId;
+            }
+
+            this.getSalary=function(){
+                return this.salary;
+            }
+		}
+
+
+		var empRecords=new Array();
+
+		function saveRecord(){
+			var empId=document.getElementById('empId').value
+			var name=document.getElementById('name').value
+			var salary=document.getElementById('salary').value
+
+			empRecords.push(new Employee(empId,name,salary));
+
+			alert("Record is saved successfully.....")
+		}
+
+        function searchRecord(){
+			var srch=parseInt(prompt("Enter empId to search"))
+			empRecords.forEach((emp)=>{
+  				if(emp.getId()==srch)
+  					alert(emp.showEmployeeDetails())
+			});
+		}
+
+
+        function searchSalary(){
+			var srch=parseInt(prompt("Enter empId to search Salary"))
+			empRecords.forEach((emp)=>{
+  				if(emp.getId()==srch)
+  					alert(emp.displaySalary())
+			});
+		}
+
+
+		function displayRecords(){
+			var tbl="<table border='2px'>"
+
+// This is using for loop  
+
+			// for (i = 0; i < empRecords.length; i++) {
+			// 	tbl+="<tr><td>"+empRecords[i].showEmployeeDetails()+"</td></tr>"
+			// }
+			// tbl+="</table>"
+
+			// document.getElementById('d1').innerHTML=tbl;
+
+// This is using for each loop  
+                
+            empRecords.forEach(function(emp){
+                tbl+="<tr><td>"+emp.showEmployeeDetails()+"</td></tr>"
+            });
+            tbl+="</table>"
+            document.getElementById('d1').innerHTML=tbl;
+
+
+		}
+
+
+	</script>
+</head>
+<body>
+	<table border='4px'>
+		<tr>
+			<td>Enter empId</td>
+			<td><input type="text" name="" id="empId"></td>
+		</tr>
+
+
+		<tr>
+			<td>Enter name</td>
+			<td><input type="text" name="" id="name"></td>
+		</tr>
+
+		<tr>
+			<td>Enter salary</td>
+			<td><input type="text" name="" id="salary"></td>
+		</tr>
+
+		<tr>
+			<td align="center"> <button onclick="saveRecord()"> SAVE Record </button></td>
+			<td align="center"> <button onclick="displayRecords()"> Display Records </button></td>
+		</tr>
+
+        <tr>
+			<td align="center"> <button onclick="searchRecord()">Search Employee </button></td>
+            <td  align="center"> <button onclick="searchSalary()"> Display Salary </button></td>
+
+		</tr>
+	 </table>
+
+	 <div id="d1"></div>
+
+</body>
+</html>

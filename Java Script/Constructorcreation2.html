@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+		//Literal Version of OOP
+		// var emp={
+		// 	empId:101,
+		// 	name:'Tanish',
+		// 	salary:10000,
+		// 	showEmployeeDetails:function(){
+		// 		alert("Employee details are "+this.empId+" "+this.name+" "+this.salary)
+		// 	}
+		// };
+		// emp.showEmployeeDetails();
+
+		//Consrtuctor version
+
+
+		function Employee(empId,name,salary){
+			this.empId=empId;
+			this.name=name;
+			this.salary=salary;
+
+			this.showEmployeeDetails=function(){
+				alert("Employee details are "+this.empId+" "+this.name+" "+this.salary)
+			}
+		}
+
+		var emp1=new Employee(101,"Kranti",100000);
+		emp1.showEmployeeDetails();
+
+		var emp2=new Employee(102,"Pappu",200000);
+		emp2.showEmployeeDetails();
+
+		var emp3=new Employee(103,"Chintu",300000);
+		emp3.showEmployeeDetails();
+
+		var emp4=new Employee(104,"Banti",400000);
+		emp4.showEmployeeDetails();
+
+		var emp5=new Employee(105,"Tappu",500000);
+		emp5.showEmployeeDetails();
+
+
+		
+
+
+
+
+
+
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>
